@@ -1,0 +1,6 @@
+import array
+hookme.Debug("Plugin cargado!")
+
+
+def SetRecvBuffer(buffer):
+	hookme.Debug("yuhuu")

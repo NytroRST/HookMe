@@ -1,0 +1,11 @@
+﻿
+processName = "mysqld"
+
+listProcessId = hookme.GetProcessPid(processName)
+
+hookme.Debug("List of PIDs of " + processName)
+for id in listProcessId:
+	hookme.Debug(id)
+	hookme.Debug("Hooking " + processName)
+	result = hookme.Attach(id)
+	hookme.Debug(result)

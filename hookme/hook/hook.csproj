@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{85108271-123C-465F-8668-04FC8B50DD9B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hook</RootNamespace>
+    <AssemblyName>hookME</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>hook_48x48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Be.Windows.Forms.HexBox">
+      <HintPath>bin\Debug\dlls\Be.Windows.Forms.HexBox.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython, Version=2.7.0.40, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules, Version=2.7.0.40, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Nektra.Deviare2, Version=2.0.0.0, Culture=neutral, PublicKeyToken=ca654cbae704bad4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\DLLs\Nektra.Deviare2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Auxiliar\Memory.cs" />
+    <Compile Include="Core\Auxiliar\Process.cs" />
+    <Compile Include="Core\Configuration.cs" />
+    <Compile Include="Core\Console.cs" />
+    <Compile Include="Core\Data.cs" />
+    <Compile Include="FormLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLicense.Designer.cs">
+      <DependentUpon>FormLicense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Hook.cs" />
+    <Compile Include="Core\ProcessFunctions\DecryptMessage.cs" />
+    <Compile Include="Core\ProcessFunctions\EncryptMessage.cs" />
+    <Compile Include="Core\ProcessFunctions\recv.cs" />
+    <Compile Include="Core\ProcessFunctions\recvfrom.cs" />
+    <Compile Include="Core\ProcessFunctions\send.cs" />
+    <Compile Include="Core\ProcessFunctions\sendto.cs" />
+    <Compile Include="Core\ProcessFunctions\WSArecv.cs" />
+    <Compile Include="Core\ProcessFunctions\WSAsend.cs" />
+    <Compile Include="Downloader\DownloaderDependencies.cs" />
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfiguration.Designer.cs">
+      <DependentUpon>FormConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMatchReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMatchReplace.Designer.cs">
+      <DependentUpon>FormMatchReplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOpenProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpenProcess.Designer.cs">
+      <DependentUpon>FormOpenProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectProgram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectProgram.Designer.cs">
+      <DependentUpon>FormSelectProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatchAndReplace\MatchAndReplace.cs" />
+    <Compile Include="ModifiedComponents\ListViewColumnSorter.cs" />
+    <Compile Include="ModifiedComponents\ListViewColumnSorterValues.cs" />
+    <Compile Include="ModifiedComponents\ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Plugins\Plugin.cs" />
+    <Compile Include="Plugins\PluginManager.cs" />
+    <Compile Include="Plugins\PluginsAPI.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfo.Designer.cs">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Searcher\Searcher.cs" />
+    <Compile Include="wrappers\FunctionWrapper.cs" />
+    <Compile Include="wrappers\ProcessWrapper.cs" />
+    <EmbeddedResource Include="FormLicense.resx">
+      <DependentUpon>FormLicense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfiguration.resx">
+      <DependentUpon>FormConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMatchReplace.resx">
+      <DependentUpon>FormMatchReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOpenProcess.resx">
+      <DependentUpon>FormOpenProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectProgram.resx">
+      <DependentUpon>FormSelectProgram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FormInfo.resx">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ForwardArrow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changelog.txt" />
+    <Content Include="DLLs\Be.Windows.Forms.HexBox.dll" />
+    <Content Include="DLLs\DeviareCOM.dll" />
+    <Content Include="DLLs\IronPython.dll" />
+    <Content Include="DLLs\IronPython.Modules.dll" />
+    <Content Include="DLLs\IronPython.Modules.xml" />
+    <Content Include="DLLs\Microsoft.Dynamic.dll" />
+    <Content Include="DLLs\Microsoft.Scripting.dll" />
+    <Content Include="DLLs\Nektra.Deviare2.dll" />
+    <Content Include="ExamplePrograms\WSASendExample.exe" />
+    <None Include="Resources\refresh.gif" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\shape_ungroup.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\application.png" />
+    <None Include="Resources\application_go.png" />
+    <None Include="Resources\application_add.png" />
+    <None Include="Resources\application_get.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\arrow_up.png" />
+    <None Include="Resources\users.ico" />
+    <None Include="Resources\users_ico.ico" />
+    <Content Include="hook_48x48.ico" />
+    <None Include="Resources\hook_32x32.ico" />
+    <None Include="Resources\piraton.png" />
+    <None Include="Resources\award_star_gold_1.png" />
+    <None Include="Resources\magnifier.png" />
+    <None Include="Resources\application_delete.png" />
+    <Content Include="Scripts\MySQL_Backdoor.txt" />
+    <Content Include="Scripts\script01.txt" />
+    <Content Include="Scripts\script02.txt" />
+    <Content Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

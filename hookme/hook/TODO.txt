@@ -1,0 +1,53 @@
+﻿TODO para la version de blackhat arsenal:
+----------------------------------------
+- Que las APIs recv,recvfrom,send,sendto funcionen perfectamente. (Las WSA las podemos dejar apartadas de momento)
+	CASI TERMINADO, A VECES SALTA UNA EXCEPCION QUE HAY QUE TRINCAR
+
+- Que los plugins en python permitan hacer importaciones, que de momento no deja
+	TERMINADO
+
+- Un script de demo, que haga algo. Ejpl: que modifique una string
+	Hay que echarle un vistazo xq en las funciones 'def SetSendBuffer(buffer):' no se que tipo maneja python para 'buffer'. Tuplas? Array de bytes? o que?
+	- He hecho un cambio para que a los scripts se les pase como argumento un List<bytes> en vez de un array de bytes, pero... ¿Que será mejor?
+
+- DARLE UN NOMBRE A LA APLICACION! IMPORTANTISIMO
+	TERMINADO: HookME
+
+- Crearle un logo, aunque sea trocho, y si es posible modificar el diseño (grafico) de la aplicación para que quede bonita
+
+- Que desde FILE->OPEN se abra un archivo, se ponga en modo suspendido, se hookee y se restaure. Eso o algo similar.
+
+- Poder lanzar la app desde consola, y meterle scripts. Para que se pueda utilizar como tool de postexplotacion para troyanizar
+	De momento se puede cargar un script con -p path, y se puede cargar una licencia de deviare con -l licencia_b64
+	... Pero aun falta el -h para que la aplicación se arranque oculta!!
+
+- Implementar en la API de los plugins las funciones Attach, para que los plugins puedan atachearse a procesos
+----------------------------------------
+
+
+
+
+
+Arreglado fallo de sincronia cuando llegaban dos o más llamadas a la API a la vez
+
+APIS (PRIMERA PRIORIDAD)
+~~~~~~~~~~~~~~~~~~~~~~~~
+API WSARecv
+API WSARecvFrom
+API WSASend
+API WSASendTo
+API RecvFrom			-> FINALIZADO
+API SendTo				-> FINALIZADO
+API Send				-> FINALIZADO
+API Recv				-> FINALIZADO
+En los plugins no se pueden hacer "Imports" porque no están definidas las rutas de los includes o yo q se, revisar esto.
+
+
+SEGUNDA PRIORIDAD
+~~~~~~~~~~~~~~~~~
+Agregar en el registro la entrada para que no salga la aceptación de condiciones de la licencia
+Parchear la dll para que no salga el splash
+Obtener o crear programas que utilizen todos los métodos/APIs para enviar y recibir datos
+Sistema de plugins con python
+sistema de fuzzing
+sistema de repeating

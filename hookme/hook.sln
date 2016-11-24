@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hook", "hook\hook.csproj", "{85108271-123C-465F-8668-04FC8B50DD9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Installer", "Installer\Installer.csproj", "{26703384-DEED-4174-BA28-95B3B21DB2A2}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85108271-123C-465F-8668-04FC8B50DD9B}.Debug|x86.ActiveCfg = Debug|x86
+		{85108271-123C-465F-8668-04FC8B50DD9B}.Debug|x86.Build.0 = Debug|x86
+		{85108271-123C-465F-8668-04FC8B50DD9B}.Release|x86.ActiveCfg = Release|x86
+		{85108271-123C-465F-8668-04FC8B50DD9B}.Release|x86.Build.0 = Release|x86
+		{26703384-DEED-4174-BA28-95B3B21DB2A2}.Debug|x86.ActiveCfg = Debug|x86
+		{26703384-DEED-4174-BA28-95B3B21DB2A2}.Debug|x86.Build.0 = Debug|x86
+		{26703384-DEED-4174-BA28-95B3B21DB2A2}.Release|x86.ActiveCfg = Release|x86
+		{26703384-DEED-4174-BA28-95B3B21DB2A2}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
